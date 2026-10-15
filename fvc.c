@@ -5,7 +5,7 @@
 ** COMPANY     : 
 ** AUTHOR      : Lsalwestfox
 ** CREATED     : D10/15/2026T10:37:38-UTC
-** EDITED      : D10/15/2026T10:51:04-UTC
+** EDITED      : D10/15/2026T11:14:16-UTC
 ** DESCRIPTION : Platform-indepedent layer
 ** NOTICE      : Copyright (C) 2026 Lsalwestfox
 **
@@ -360,6 +360,7 @@ imm write_str(file_t file, imm p, s8 str) {
 // Argv is in UTF-8, always, if you don't have UTF-8 use ASCII, they're compatible
 int main(int argc, char **argv) {
     if (argc <= 1) {
+        print(cs8("File Version Control v0.1 by Lsalwestfox"));
         print(cs8("Usage: fvc [command] [flags]"));
         print(cs8("   init              - initializes the repo"));
         print(cs8("   add [files...]    - adds files to the repo to check"));
@@ -729,6 +730,9 @@ int main(int argc, char **argv) {
 /******************************************************************************,
 **
 ** HISTORY:
+**
+** At D10/15/2026T11:14:16-UTC by Lsalwestfox
+**    - Added banner in help command
 **
 ** At D10/15/2026T10:51:04-UTC by Lsalwestfox
 **    - Fixed and improved handling of user.sys
