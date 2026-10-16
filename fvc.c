@@ -5,7 +5,7 @@
 ** COMPANY     : 
 ** AUTHOR      : Lsalwestfox
 ** CREATED     : D10/15/2026T10:37:38-UTC
-** EDITED      : D10/15/2026T11:14:16-UTC
+** EDITED      : D10/16/2026T11:05:56-UTC
 ** DESCRIPTION : Platform-indepedent layer
 ** NOTICE      : Copyright (C) 2026 Lsalwestfox
 **
@@ -201,6 +201,10 @@ s8 *split_lines(imm *num_lines, s8 string) {
     s8 *p = result + j;
     p->str = string.str + start;
     p->len = string.len - start;
+    
+    if (!p->str) {
+        result_num = 0;
+    }
     
     if (num_lines) {
         *num_lines = result_num;
@@ -730,6 +734,9 @@ int main(int argc, char **argv) {
 /******************************************************************************,
 **
 ** HISTORY:
+**
+** At D10/16/2026T11:05:56-UTC by Lsalwestfox
+**    - Fixing crash when user.sys is not present
 **
 ** At D10/15/2026T11:14:16-UTC by Lsalwestfox
 **    - Added banner in help command
